@@ -69,5 +69,5 @@ QR = add_finder_patterns(QR)
 
 # Print the QR matrix
 for row in QR:
-    print(row, end='\n')
+    print(*row, end='\n')
 
