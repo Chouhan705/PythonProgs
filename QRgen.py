@@ -60,7 +60,13 @@ def generate_finder_pattern_coordinates():
                 coordinates["timing_pattern_vertical"].append((row,col))
 
     # Alignment Pattern
+
+    for row in range(20,25):
+        for col in range(20,25):
+            coordinates["alignment_pattern"].append((row,col))
+
     # Dark Module
+    # done while adding
 
             
     
@@ -128,12 +134,21 @@ def add_finder_patterns(QR):
             QR[row][col] = white
     
     # Alignment Pattern
+
+    for row, col in coordinates["alignment_pattern"]:
+        if row == 20 or row == 24 or col == 20 or col == 24:
+            QR[row][col] = black
+        elif row == 21 or row == 23 or col == 21 or col == 23:
+            QR[row][col] = white
+        elif 22 == row and 22 == col:
+            QR[row][col] = black
+
     # Dark Module
     QR[21][8] = black
     return QR
 
 # Initialize a blank 29x29 QR matrix
-QR = [[('\N{grinning face}') for i in range(29)] for _ in range(29)]
+QR = [["  " for i in range(29)] for _ in range(29)]
 
 # Add finder patterns to the matrix
 QR = add_finder_patterns(QR)
