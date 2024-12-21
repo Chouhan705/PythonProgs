@@ -62,7 +62,7 @@ def add_finder_patterns(QR):
     return QR
 
 # Initialize a blank 29x29 QR matrix
-QR = [[0 for i in range(29)] for _ in range(29)]
+QR = [[('\N{white large square}') for i in range(29)] for _ in range(29)]
 
 # Add finder patterns to the matrix
 QR = add_finder_patterns(QR)
