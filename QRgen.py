@@ -61,6 +61,7 @@ def generate_finder_pattern_coordinates():
 
     # Alignment Pattern
     # Dark Module
+
             
     
     return coordinates
@@ -125,7 +126,10 @@ def add_finder_patterns(QR):
             QR[row][col] = black
         else:
             QR[row][col] = white
-     
+    
+    # Alignment Pattern
+    # Dark Module
+    QR[21][8] = black
     return QR
 
 # Initialize a blank 29x29 QR matrix
